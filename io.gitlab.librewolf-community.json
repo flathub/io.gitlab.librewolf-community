@@ -28,6 +28,7 @@
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.gtk.vfs.*",
         "--env=MOZ_ENABLE_WAYLAND=1",
+        "--env=MOZ_USE_XINPUT2=1",
         "--share=network"
     ],
     "modules": [
