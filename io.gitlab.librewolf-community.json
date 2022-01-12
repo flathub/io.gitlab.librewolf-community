@@ -49,7 +49,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/96.0-1/LibreWolf-94.0-1.aarch64.tar.bz2",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/96.0-1/LibreWolf-96.0-1.aarch64.tar.bz2",
                     "sha256": "be7ce04cf4ebb6d2283571e86025b75926be421e2851f2d479e392f5bf81058a",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 0,
