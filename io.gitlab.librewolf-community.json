@@ -13,8 +13,9 @@
     "command": "librewolf",
     "finish-args": [
         "--share=ipc",
+        "--share=network",
         "--socket=wayland",
-        "--socket=fallback-x11",
+        "--socket=x11",
         "--socket=pcsc",
         "--socket=pulseaudio",
         "--persist=.librewolf",
@@ -27,8 +28,11 @@
         "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.gtk.vfs.*",
+        "--own-name=org.freedesktop.Notifications",
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
+        "--own-name=org.mozilla.librewolf.*",
+        "--own-name=io.gitlab.librewolf.*",
         "--share=network"
     ],
     "modules": [
