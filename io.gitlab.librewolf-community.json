@@ -15,7 +15,7 @@
         "--share=ipc",
         "--share=network",
         "--socket=wayland",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=pcsc",
         "--socket=pulseaudio",
         "--persist=.librewolf",
@@ -52,8 +52,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/97.0-1/LibreWolf-97.0-1.aarch64.tar.bz2",
-                    "sha256": "0b67887b1df273c843a8b2dc1fc2017cd61e0718a7de0a526d474562fd9e99f6",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/97.0.1-1/LibreWolf-97.0.1-1.aarch64.tar.bz2",
+                    "sha256": "067062806c84af0b44b120fe65b4ab18a820c1e09cc2f17170eda63f5fa43404",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 0,
                     "only-arches": [
@@ -62,8 +62,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/97.0-1/LibreWolf-97.0-1.x86_64.tar.bz2",
-                    "sha256": "0c8f1410755d552ccebc8b4d770df4fe4f2baea4e80a2d7ea9897e85bee440b9",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/97.0.1-1/LibreWolf-97.0.1-1.x86_64.tar.bz2",
+                    "sha256": "7a7185f11e7cfb33287dd5f1ddf7425825dd73170d971a757266a2e63fce6281",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 0,
                     "only-arches": [
