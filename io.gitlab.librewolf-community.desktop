@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=LibreWolf
 Exec=librewolf %u
+Comment=A fork of Firefox, focused on privacy, security and freedom.
 Icon=io.gitlab.librewolf-community
 Type=Application
 MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
