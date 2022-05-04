@@ -28,7 +28,7 @@
         "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.gtk.vfs.*",
-        "--own-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.Notifications",
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
         "--own-name=io.gitlab.librewolf.*",
