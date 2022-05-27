@@ -32,6 +32,7 @@
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
         "--own-name=io.gitlab.librewolf.*",
+        "--own-name=org.mpris.MediaPlayer2.firefox.*",
         "--share=network"
     ],
     "modules": [
