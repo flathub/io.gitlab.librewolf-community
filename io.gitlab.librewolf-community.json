@@ -117,6 +117,29 @@
                     "path": "gtk-settings.ini"
                 }
             ]
+        },
+        {
+            "name": "libnotify",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dtests=false",
+                "-Dintrospection=disabled",
+                "-Dman=false",
+                "-Dgtk_doc=false",
+                "-Ddocbook_docs=disabled"
+            ],
+            "sources": [
+                {
+                    "sha256": "744b2b37508135f8261b755a9debe6e09add421adc75bde930f6e198b70ab46e",
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.12.tar.xz",
+                    "x-checker-data": {
+                        "project-id": 13149,
+                        "type": "anitya",
+                        "url-template": "https://download.gnome.org/sources/libnotify/$major.$minor/libnotify-$version.tar.xz"
+                    }
+                }
+            ]
         }
     ]
 }
