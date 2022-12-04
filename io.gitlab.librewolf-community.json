@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/107.0-1/LibreWolf-107.0-1.aarch64.tar.bz2",
-                    "sha256": "5d7271d3f1b617b3ad454ed3ddccebd16b1e35d7ef1286ae8882295bff6cf414",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/107.0.1-1/LibreWolf-107.0.1-1.aarch64.tar.bz2",
+                    "sha256": "b26f34e09473a4340e9680b75860b41840c408d18c8dec210707cb99096821e2",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 0,
                     "only-arches": [
@@ -65,8 +65,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/107.0-1/LibreWolf-107.0-1.x86_64.tar.bz2",
-                    "sha256": "2279f87e1962aa063d3e2408122a524adc886bdd729c03e45244346306c322eb",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/107.0.1-1/LibreWolf-107.0.1-1.x86_64.tar.bz2",
+                    "sha256": "3bc27fba9530c3c1317d12698c1fa7d12e712af48afda816883125efc0f20f32",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 0,
                     "only-arches": [
