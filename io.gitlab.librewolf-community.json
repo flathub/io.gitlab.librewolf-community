@@ -78,7 +78,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "io.gitlab.librewolf-community.appdata.xml.in"
+                    "path": "io.gitlab.librewolf-community.appdata.xml"
                 },
                 {
                     "type": "file",
