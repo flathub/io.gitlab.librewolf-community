@@ -46,7 +46,7 @@
                 "mv librewolf.tar.bz2 /app/lib/librewolf",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/usr/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
-                "install -D -m644 /app/lib/librewolf/io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
+                "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
                 "install -D -m644 io.gitlab.librewolf-community.desktop -t /app/share/applications",
                 "install -D -m755 librewolf.sh /app/bin/librewolf",
                 "install -d /app/lib/ffmpeg"
@@ -54,20 +54,20 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/111.0-3/LibreWolf-111.0-3.aarch64.tar.bz2",
-                    "sha256": "2df1871ccf4d2b4f7fabf187f80c08eb4d0754fea5dba96dc14519ffb04a4b1a",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/112.0-1/LibreWolf-112.0-1.aarch64.tar.bz2",
+                    "sha256": "b0a70fb815437701571807d3c97ba6bbfbd0163d88c555aa86d875634ccead1f",
                     "dest": "librewolf.tar.bz2",
-                    "strip-components": 0,
+                    "strip-components": 1,
                     "only-arches": [
                         "aarch64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/111.0-3/LibreWolf-111.0-3.x86_64.tar.bz2",
-                    "sha256": "584187698a48d6ba4a895db78c6e03404095206ee04f1d7d67d0a4b4f7af20f8",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/112.0-1/LibreWolf-112.0-1.x86_64.tar.bz2",
+                    "sha256": "6291147bc7a5be881b70f6ad6f226faedecb5d52053be3febba093fd897c9c72",
                     "dest": "librewolf.tar.bz2",
-                    "strip-components": 0,
+                    "strip-components": 1,
                     "only-arches": [
                         "x86_64"
                     ]
@@ -75,6 +75,10 @@
                 {
                     "type": "file",
                     "path": "io.gitlab.librewolf-community.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "io.gitlab.librewolf-community.appdata.xml"
                 },
                 {
                     "type": "file",
