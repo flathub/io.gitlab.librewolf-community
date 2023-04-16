@@ -10,10 +10,6 @@
             "add-ld-path": "."
         }
     },
-    "env": {
-        "pkgver": "112.0",
-        "pkgrel": "1"
-    },
     "command": "librewolf",
     "finish-args": [
         "--share=ipc",
@@ -48,6 +44,7 @@
             "build-commands": [
                 "export pkgver=112.0",
                 "export pkgrel=1",
+                "export DATE=$(date +%Y-%m-%d)",
                 "mkdir -p /app/lib",
                 "mv librewolf.tar.bz2 /app/lib/librewolf",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
