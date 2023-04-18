@@ -64,8 +64,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/112.0-1/LibreWolf-112.0-1.x86_64.tar.bz2",
-                    "sha256": "6291147bc7a5be881b70f6ad6f226faedecb5d52053be3febba093fd897c9c72",
+                    "url": "https://gitlab.com/api/v4/projects/12829184/packages/generic/librewolf/112.0.1-1/LibreWolf-112.0.1-1.x86_64.tar.bz2",
+                    "sha256": "93d5af47e63a0fdd35c4251cf1337e32fad560525d94b88a587a9dd5fdf27d2e",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
