@@ -55,7 +55,7 @@
                 {
                     "type": "archive",
                     "url": "https://gitlab.com/librewolf-community/browser/bsys6/-/jobs/4139609098/artifacts/raw/librewolf-112.0.1-2-linux-arm64-package.tar.bz2",
-                    "sha256": "83f82d1ec3d0c59925f5840cc6527da8a6ec89479cd8f6a5c47604235c83bff9",
+                    "sha256": "c074aa32f2124c394cbe5dc9adfd39d1185d81634dd5f540f8742858ecc2f7c1",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
