@@ -31,6 +31,7 @@
     </ul>
   </description>
   <releases>
+    <release version="0.8.3" date="2023-10-09"/>
     <release version="118.0.1-1" date="2023-09-28"/>
   </releases>
   <keywords>
@@ -43,5 +44,5 @@
   <provides>
     <id>io.gitlab.librewolf-community</id>
   </provides>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
 </component>
