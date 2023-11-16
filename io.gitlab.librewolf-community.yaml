@@ -79,6 +79,8 @@ modules:
         sha256: "ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
       - type: "patch"
         path: "gtk3-werror.patch"
+      - type: "patch"
+        path: "unity-menubar.patch"
   - name: "gtk-settings"
     buildsystem: "simple"
     build-commands:
