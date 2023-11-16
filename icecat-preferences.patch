@@ -1,0 +1,221 @@
+--- a/browser/components/preferences/privacy.inc.xhtml.orig	2021-08-17 15:38:19.838881866 -0400
++++ b/browser/components/preferences/privacy.inc.xhtml	2021-08-17 15:39:01.382760058 -0400
+@@ -632,6 +632,83 @@
+          data-l10n-id="addressbar-suggestions-settings"/>
+ </groupbox>
+ 
++<!-- IceCat-specific privacy group -->
++<groupbox id="iceCatPrivacyGroup"
++          data-category="panePrivacy" data-subcategory="icecatPreferences"
++          hidden="true">
++  <label><html:h2 data-l10n-id="icecat-privacy-group-header"/></label>
++  <vbox>
++    <checkbox id="disableJavaScript" data-l10n-id="disable-javascript-option"
++              preference="javascript.enabled"/>
++    <vbox class="indent">
++      <label data-l10n-id="disable-javascript-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="disableCustomFonts" data-l10n-id="disable-custom-fonts-option"
++              preference="browser.display.use_document_fonts"/>
++    <vbox class="indent">
++      <label data-l10n-id="disable-custom-fonts-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="isolateRequestFirstParty" data-l10n-id="isolate-request-first-party-option"
++              preference="privacy.firstparty.isolate"/>
++    <vbox class="indent">
++      <label data-l10n-id="isolate-request-first-party-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="autoUpdateExtensions" data-l10n-id="auto-update-extensions-option"
++              preference="extensions.update.enabled"/>
++    <vbox class="indent">
++      <label data-l10n-id="auto-update-extensions-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="spoofReferrers" data-l10n-id="spoof-referers-option"
++              preference="network.http.referer.spoofSource"/>
++    <vbox class="indent">
++      <label data-l10n-id="spoof-referers-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="resistFingerprinting" data-l10n-id="resist-fingerprinting-option"
++              preference="privacy.resistFingerprinting"/>
++    <vbox class="indent">
++      <label data-l10n-id="resist-fingerprinting-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="detectCaptivePortal" data-l10n-id="detect-captive-portal-option"
++              preference="network.captive-portal-service.enabled"/>
++    <vbox class="indent">
++      <label data-l10n-id="detect-captive-portal-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="detectNetworkConnectivity" data-l10n-id="detect-network-connectivity-option"
++              preference="network.connectivity-service.enabled"/>
++    <vbox class="indent">
++      <label data-l10n-id="detect-network-connectivity-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="geolocation" data-l10n-id="geolocation-option"
++              preference="browser.search.geoip.url"/>
++    <vbox class="indent">
++      <label data-l10n-id="geolocation-description"/>
++    </vbox>
++  </vbox>
++  <vbox>
++    <checkbox id="webgl" data-l10n-id="webgl-option"
++              preference="webgl.disabled"/>
++    <vbox class="indent">
++      <label data-l10n-id="webgl-description"/>
++    </vbox>
++  </vbox>
++</groupbox>
++
+ <hbox id="permissionsCategory"
+       class="subcategory"
+       hidden="true"
+--- a/browser/components/preferences/privacy.js.orig	2021-08-17 15:39:19.662709308 -0400
++++ b/browser/components/preferences/privacy.js	2021-08-17 16:10:17.129079115 -0400
+@@ -138,6 +138,17 @@
+   { id: "browser.urlbar.suggest.topsites", type: "bool" },
+   { id: "browser.urlbar.suggest.engines", type: "bool" },
+ 
++  // IceCat-specific
++  { id: "javascript.enabled", type: "bool" },
++  { id: "browser.display.use_document_fonts", type: "int" },
++  { id: "extensions.update.enabled", type: "bool" },
++  { id: "network.http.referer.spoofSource", type: "bool" },
++  { id: "privacy.resistFingerprinting", type: "bool" },
++  { id: "webgl.disabled", type: "bool" },
++  { id: "network.captive-portal-service.enabled", type: "bool" },
++  { id: "network.connectivity-service.enabled", type: "bool" },
++  { id: "browser.search.geoip.url", type: "string" },
++
+   // History
+   { id: "places.history.enabled", type: "bool" },
+   { id: "browser.formfill.enable", type: "bool" },
+@@ -706,6 +716,24 @@
+     setSyncFromPrefListener("enableOCSP", () => this.readEnableOCSP());
+     setSyncToPrefListener("enableOCSP", () => this.writeEnableOCSP());
+ 
++    setSyncFromPrefListener("disableJavaScript", () => this.readDisableJavaScript());
++    setSyncToPrefListener("disableJavaScript", () => this.writeDisableJavaScript());
++
++    setSyncFromPrefListener("disableCustomFonts", () => this.readDisableCustomFonts());
++    setSyncToPrefListener("disableCustomFonts", () => this.writeDisableCustomFonts());
++
++    setSyncFromPrefListener("detectCaptivePortal", () => this.readDetectCaptive());
++    setSyncToPrefListener("detectCaptivePortal", () => this.writeDetectCaptive());
++
++    setSyncFromPrefListener("detectNetworkConnectivity", () => this.readDetectConnectivity());
++    setSyncToPrefListener("detectNetworkConnectivity", () => this.writeDetectConnectivity());
++
++    setSyncFromPrefListener("geolocation", () => this.readGeolocation());
++    setSyncToPrefListener("geolocation", () => this.writeGeolocation());
++
++    setSyncFromPrefListener("webgl", () => this.readWebGL());
++    setSyncToPrefListener("webgl", () => this.writeWebGL());
++
+     if (AlertsServiceDND) {
+       let notificationsDoNotDisturbBox = document.getElementById(
+         "notificationsDoNotDisturbBox"
+@@ -825,6 +850,62 @@
+     SiteDataManager.updateSites();
+   },
+ 
++  // ICECAT PREFERENCES
++
++  readDisableJavaScript() {
++    let pref = Preferences.get("javascript.enabled");
++    return !pref.value;
++  },
++  writeDisableJavaScript() {
++    let checkbox = document.getElementById("disableJavaScript");
++    return !checkbox.checked;
++  },
++
++  readDisableCustomFonts() {
++    let pref = Preferences.get("browser.display.use_document_fonts");
++    return pref.value == 0;
++  },
++  writeDisableCustomFonts() {
++    let checkbox = document.getElementById("disableCustomFonts");
++    return checkbox.checked ? 0 : 1;
++  },
++
++  readDetectCaptive() {
++    let pref = Preferences.get("network.captive-portal-service.enabled");
++    return pref.value;
++  },
++  writeDetectCaptive() {
++    let checkbox = document.getElementById("detectCaptivePortal");
++    return checkbox.checked;
++  },
++
++  readDetectConnectivity() {
++    let pref = Preferences.get("network.connectivity-service.enabled");
++    return pref.value;
++  },
++  writeDetectConnectivity() {
++    let checkbox = document.getElementById("detectNetworkConnectivity");
++    return checkbox.checked;
++  },
++
++  readGeolocation() {
++    let pref = Preferences.get("browser.search.geoip.url");
++    return pref.value !== "";
++  },
++  writeGeolocation() {
++    let checkbox = document.getElementById("geolocation");
++    return checkbox.checked ? "https://location.services.mozilla.com/v1/country?key=%MOZILLA_API_KEY%" : "";
++  },
++
++  readWebGL() {
++    let pref = Preferences.get("webgl.disabled");
++    return !pref.value;
++  },
++  writeWebGL() {
++    let checkbox = document.getElementById("webgl");
++    return !checkbox.checked;
++  },
++
+   // CONTENT BLOCKING
+ 
+   /**
+diff -ru icecat-91.13.0/browser/base/content/appmenu-viewcache.inc.xhtml icecat-91.13.0.orig/browser/base/content/appmenu-viewcache.inc.xhtml
+--- icecat-91.13.0/browser/base/content/appmenu-viewcache.inc.xhtml	2022-08-30 20:57:37.511721105 -0400
++++ icecat-91.13.0.orig/browser/base/content/appmenu-viewcache.inc.xhtml	2022-08-30 20:52:39.076545425 -0400
+@@ -336,6 +336,10 @@
+                      key="key_preferencesCmdMac"
+ #endif
+                      oncommand="openPreferences()"/>
++      <toolbarbutton id="appMenu-icecatsettings-button"
++                     class="subviewbutton"
++                     data-l10n-id="appmenuitem-icecat-settings"
++                     oncommand="switchToTabHavingURI('about:preferences#privacy-icecatPreferences', true)"/>
+       <toolbarbutton id="appMenu-more-button2"
+                      class="subviewbutton subviewbutton-nav"
+                      data-l10n-id="appmenuitem-more-tools"
+diff -ru icecat-91.13.0.orig/browser/base/content/browser-menubar.inc icecat-91.13.0/browser/base/content/browser-menubar.inc
+--- icecat-91.13.0.orig/browser/base/content/browser-menubar.inc	2022-08-30 21:06:25.143226477 -0400
++++ icecat-91.13.0/browser/base/content/browser-menubar.inc	2022-08-30 21:06:10.103469430 -0400
+@@ -139,6 +139,9 @@
+                           />
+ #endif
+ #endif
++              <menuitem id="menu_icecat_preferences"
++	          oncommand="switchToTabHavingURI('about:preferences#privacy-icecatPreferences', true)"
++	          data-l10n-id="appmenuitem-icecat-settings"/>
+               </menupopup>
+             </menu>
+ 

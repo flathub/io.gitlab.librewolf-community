@@ -1,0 +1,24 @@
+--- a/browser/base/content/aboutDialog.xhtml.orig	2021-08-17 16:59:51.674898001 -0400
++++ b/browser/base/content/aboutDialog.xhtml	2021-08-17 17:00:18.346884904 -0400
+@@ -161,7 +161,6 @@
+       <hbox pack="center">
+         <label is="text-link" class="bottom-link" useoriginprincipal="true" href="about:license" data-l10n-id="bottomLinks-license"/>
+         <label is="text-link" class="bottom-link" useoriginprincipal="true" href="about:rights" data-l10n-id="bottomLinks-rights"/>
+-        <label is="text-link" class="bottom-link" href="https://www.mozilla.org/privacy/?utm_source=firefox-browser&#38;utm_medium=firefox-desktop&#38;utm_campaign=about-dialog" data-l10n-id="bottomLinks-privacy"/>
+       </hbox>
+       <description id="trademark" data-l10n-id="trademarkInfo"></description>
+     </vbox>
+--- a/browser/base/content/aboutDialog.css
++++ b/browser/base/content/aboutDialog.css
+@@ -14,10 +14,9 @@
+ #rightBox {
+   background-image: url("chrome://branding/content/about-wordmark.svg");
+   background-repeat: no-repeat;
+-  background-size: 288px auto;
+   /* padding-top creates room for the wordmark */
+   padding-top: 38px;
+-  margin-top: 20px;
++  margin-top: 60px;
+ }
+ 
+ #rightBox:-moz-locale-dir(rtl) {
