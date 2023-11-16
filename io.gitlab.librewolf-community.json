@@ -1,148 +1,104 @@
-{
-    "app-id": "io.gitlab.librewolf-community",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
-    "sdk": "org.freedesktop.Sdk",
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "23.08",
-            "add-ld-path": "."
-        }
-    },
-    "command": "librewolf",
-    "finish-args": [
-        "--share=ipc",
-        "--share=network",
-        "--socket=wayland",
-        "--socket=fallback-x11",
-        "--socket=pcsc",
-        "--socket=pulseaudio",
-        "--socket=cups",
-        "--env=GTK_PATH=/app/lib/gtkmodules",
-        "--persist=.librewolf",
-        "--filesystem=xdg-download:rw",
-        "--filesystem=xdg-run/pipewire-0",
-        "--device=dri",
-        "--talk-name=org.freedesktop.FileManager1",
-        "--system-talk-name=org.freedesktop.NetworkManager",
-        "--talk-name=org.a11y.Bus",
-        "--talk-name=org.gnome.SessionManager",
-        "--talk-name=org.freedesktop.ScreenSaver",
-        "--talk-name=org.gtk.vfs.*",
-        "--talk-name=org.freedesktop.Notifications",
-        "--env=MOZ_ENABLE_WAYLAND=1",
-        "--env=MOZ_USE_XINPUT2=1",
-        "--own-name=io.gitlab.librewolf.*",
-        "--own-name=org.mpris.MediaPlayer2.firefox.*"
-    ],
-    "modules": [
-        "shared-modules/dbus-glib/dbus-glib-0.110.json",
-        {
-            "name": "librewolf",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/lib",
-                "mv librewolf.tar.bz2 /app/lib/librewolf",
-                "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
-                "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/usr/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
-                "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
-                "install -D -m644 io.gitlab.librewolf-community.desktop -t /app/share/applications",
-                "install -D -m755 librewolf.sh /app/bin/librewolf",
-                "install -d /app/lib/ffmpeg"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/119.0.1-1/librewolf-119.0.1-1-linux-arm64-package.tar.bz2",
-                    "sha256": "fa8c3584934e55e6d39271bea34d518210f00fed42bcb0b33bee83379a1b9538",
-                    "dest": "librewolf.tar.bz2",
-                    "strip-components": 1,
-                    "only-arches": [
-                        "aarch64"
-                    ]
-                },
-                {
-                    "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/119.0.1-1/librewolf-119.0.1-1-linux-x86_64-package.tar.bz2",
-                    "sha256": "9423594dce53ccdc114d87ec406b738d543669618c675681a4d2022f8f866556",
-                    "dest": "librewolf.tar.bz2",
-                    "strip-components": 1,
-                    "only-arches": [
-                        "x86_64"
-                    ]
-                },
-                {
-                    "type": "file",
-                    "path": "io.gitlab.librewolf-community.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "io.gitlab.librewolf-community.appdata.xml"
-                },
-                {
-                    "type": "file",
-                    "path": "librewolf.sh"
-                }
-            ]
-        },
-        {
-            "name": "gtk-cups-backend",
-            "buildsystem": "meson",
-            "make-args": [
-                "modules/printbackends/libprintbackend-cups.so"
-            ],
-            "no-make-install": true,
-            "post-install": [
-                "install -Dm 755 modules/printbackends/libprintbackend-cups.so -t /app/lib/gtkmodules/3.0.0/printbackends/"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/core/41/41.0/sources/gtk%2B-3.24.30.tar.xz",
-                    "sha256": "ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
-                },
-                {
-                    "type": "patch",
-                    "path": "gtk3-werror.patch"
-                }
-            ]
-        },
-        {
-            "name": "gtk-settings",
-            "buildsystem": "simple",
-            "build-commands": [
-                "install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "gtk-settings.ini"
-                }
-            ]
-        },
-        {
-            "name": "libnotify",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dtests=false",
-                "-Dintrospection=disabled",
-                "-Dman=false",
-                "-Dgtk_doc=false",
-                "-Ddocbook_docs=disabled"
-            ],
-            "sources": [
-                {
-                    "sha256": "ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0",
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz",
-                    "x-checker-data": {
-                        "project-id": 13149,
-                        "type": "anitya",
-                        "url-template": "https://download.gnome.org/sources/libnotify/$major.$minor/libnotify-$version.tar.xz"
-                    }
-                }
-            ]
-        }
-    ]
-}
+app-id: "io.gitlab.librewolf-community"
+runtime: "org.freedesktop.Platform"
+runtime-version: "23.08"
+sdk: "org.freedesktop.Sdk"
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: "lib/ffmpeg"
+    version: "23.08"
+    add-ld-path: "."
+command: "librewolf"
+finish-args:
+  - "--share=ipc"
+  - "--share=network"
+  - "--socket=wayland"
+  - "--socket=fallback-x11"
+  - "--socket=pcsc"
+  - "--socket=pulseaudio"
+  - "--socket=cups"
+  - "--env=GTK_PATH=/app/lib/gtkmodules"
+  - "--persist=.librewolf"
+  - "--filesystem=xdg-download:rw"
+  - "--filesystem=xdg-run/pipewire-0"
+  - "--device=dri"
+  - "--talk-name=org.freedesktop.FileManager1"
+  - "--system-talk-name=org.freedesktop.NetworkManager"
+  - "--talk-name=org.a11y.Bus"
+  - "--talk-name=org.gnome.SessionManager"
+  - "--talk-name=org.freedesktop.ScreenSaver"
+  - "--talk-name=org.gtk.vfs.*"
+  - "--talk-name=org.freedesktop.Notifications"
+  - "--env=MOZ_ENABLE_WAYLAND=1"
+  - "--env=MOZ_USE_XINPUT2=1"
+  - "--own-name=io.gitlab.librewolf.*"
+  - "--own-name=org.mpris.MediaPlayer2.firefox.*"
+modules:
+  - "shared-modules/dbus-glib/dbus-glib-0.110.json"
+  - name: "librewolf"
+    buildsystem: "simple"
+    build-commands:
+      - "mkdir -p /app/lib"
+      - "mv librewolf.tar.bz2 /app/lib/librewolf"
+      - "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png"
+      - "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/usr/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png"
+      - "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo"
+      - "install -D -m644 io.gitlab.librewolf-community.desktop -t /app/share/applications"
+      - "install -D -m755 librewolf.sh /app/bin/librewolf"
+      - "install -d /app/lib/ffmpeg"
+    sources:
+      - type: "archive"
+        url: "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/119.0.1-1/librewolf-119.0.1-1-linux-arm64-package.tar.bz2"
+        sha256: "fa8c3584934e55e6d39271bea34d518210f00fed42bcb0b33bee83379a1b9538"
+        dest: "librewolf.tar.bz2"
+        strip-components: 1
+        only-arches:
+          - "aarch64"
+      - type: "archive"
+        url: "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/119.0.1-1/librewolf-119.0.1-1-linux-x86_64-package.tar.bz2"
+        sha256: "9423594dce53ccdc114d87ec406b738d543669618c675681a4d2022f8f866556"
+        dest: "librewolf.tar.bz2"
+        strip-components: 1
+        only-arches:
+          - "x86_64"
+      - type: "file"
+        path: "io.gitlab.librewolf-community.desktop"
+      - type: "file"
+        path: "io.gitlab.librewolf-community.appdata.xml"
+      - type: "file"
+        path: "librewolf.sh"
+  - name: "gtk-cups-backend"
+    buildsystem: "meson"
+    make-args:
+      - "modules/printbackends/libprintbackend-cups.so"
+    no-make-install: true
+    post-install:
+      - "install -Dm 755 modules/printbackends/libprintbackend-cups.so -t /app/lib/gtkmodules/3.0.0/printbackends/"
+    sources:
+      - type: "archive"
+        url: "https://download.gnome.org/core/41/41.0/sources/gtk%2B-3.24.30.tar.xz"
+        sha256: "ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
+      - type: "patch"
+        path: "gtk3-werror.patch"
+  - name: "gtk-settings"
+    buildsystem: "simple"
+    build-commands:
+      - "install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini"
+    sources:
+      - type: "file"
+        path: "gtk-settings.ini"
+  - name: "libnotify"
+    buildsystem: "meson"
+    config-opts:
+      - "-Dtests=false"
+      - "-Dintrospection=disabled"
+      - "-Dman=false"
+      - "-Dgtk_doc=false"
+      - "-Ddocbook_docs=disabled"
+    sources:
+      - sha256: "ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0"
+        type: "archive"
+        url: "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz"
+        x-checker-data:
+          project-id: 13149
+          type: "anitya"
+          url-template: "https://download.gnome.org/sources/libnotify/$major.$minor/libnotify-$version.tar.xz"
