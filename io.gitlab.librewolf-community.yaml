@@ -81,6 +81,10 @@ modules:
         path: "gtk3-werror.patch"
       - type: "patch"
         path: "unity-menubar.patch"
+      - type: "patch"
+        path: "0018-Ghostery-Theme.patch"
+        - type: "patch"
+        path: "0002-Change-new-tab-page-and-home-page-url.patch"
   - name: "gtk-settings"
     buildsystem: "simple"
     build-commands:
