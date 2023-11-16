@@ -17,7 +17,7 @@ index 6ef8e69196..a1073fe280 100644
  // The behavior of option 3 is detailed at: http://wiki.mozilla.org/Session_Restore
  pref("browser.startup.page",                1);
 -pref("browser.startup.homepage",            "about:home");
-+pref("browser.startup.homepage",            "https://ghostery.com/");
++pref("browser.startup.homepage",            "https://spot.murena.io/");
  pref("browser.startup.homepage.abouthome_cache.enabled", true);
  pref("browser.startup.homepage.abouthome_cache.loglevel", "Warn");
 
@@ -43,7 +43,7 @@ index 43c0ea1f37..29ee2ea72c 100644
 -      this.privilegedAboutProcessEnabled ? "-noscripts" : "",
 -      ".html",
 -    ].join("");
-+    return "https://ghostery.com/";
++    return "https://spot.murena.io/";
    }
 
    get welcomeURL() {
@@ -56,7 +56,7 @@ index db8af26001..dfca2933e1 100644
 
  const kPrefName = "browser.startup.homepage";
 -const kDefaultHomePage = "about:home";
-+const kDefaultHomePage = "https://ghostery.com/";
++const kDefaultHomePage = "https://spot.murena.io/";
  const kExtensionControllerPref =
    "browser.startup.homepage_override.extensionControlled";
  const kHomePageIgnoreListId = "homepage-urls";
