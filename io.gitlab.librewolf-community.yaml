@@ -60,12 +60,7 @@ modules:
         strip-components: 1
         only-arches:
           - "x86_64"
-      - type: "file"
-        path: "io.gitlab.librewolf-community.desktop"
-      - type: "file"
-        path: "io.gitlab.librewolf-community.appdata.xml"
-      - type: "file"
-        path: "librewolf.sh"
+    cflags: "-O3"
   - name: "gtk-cups-backend"
     buildsystem: "meson"
     make-args:
@@ -83,8 +78,9 @@ modules:
         path: "unity-menubar.patch"
       - type: "patch"
         path: "0018-Ghostery-Theme.patch"
-        - type: "patch"
+      - type: "patch"
         path: "0002-Change-new-tab-page-and-home-page-url.patch"
+    cflags: "-O3"
   - name: "gtk-settings"
     buildsystem: "simple"
     build-commands:
@@ -92,6 +88,7 @@ modules:
     sources:
       - type: "file"
         path: "gtk-settings.ini"
+    cflags: "-O3"
   - name: "libnotify"
     buildsystem: "meson"
     config-opts:
@@ -108,3 +105,4 @@ modules:
           project-id: 13149
           type: "anitya"
           url-template: "https://download.gnome.org/sources/libnotify/$major.$minor/libnotify-$version.tar.xz"
+    cflags: "-O3"
