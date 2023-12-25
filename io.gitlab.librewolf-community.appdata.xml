@@ -39,7 +39,7 @@
     <keyword>web</keyword>
   </keywords>
   <url type="homepage">https://librewolf.net/</url>
-  <url type="bugtracker">https://gitlab.com/groups/librewolf-community/-/issues/</url>
+  <url type="bugtracker">https://codeberg.org/librewolf/issues/issues</url>
   <provides>
     <id>io.gitlab.librewolf-community</id>
   </provides>
