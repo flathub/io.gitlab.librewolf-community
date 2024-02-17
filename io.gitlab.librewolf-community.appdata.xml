@@ -31,7 +31,7 @@
     </ul>
   </description>
   <releases>
-    <release version="122.0-1" date="2023-01-24"/>
+    <release version="122.0.1-2" date="2024-02-16"/>
   </releases>
   <keywords>
     <keyword>librewolf</keyword>
@@ -42,8 +42,5 @@
   <url type="bugtracker">https://codeberg.org/librewolf/issues/issues</url>
   <url type="faq">https://librewolf.net/docs/faq/</url>
   <url type="vcs-browser">https://codeberg.org/librewolf</url>
-  <provides>
-    <id>io.gitlab.librewolf-community</id>
-  </provides>
   <content_rating type="oars-1.1"/>
 </component>
