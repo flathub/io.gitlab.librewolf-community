@@ -40,6 +40,8 @@
   </keywords>
   <url type="homepage">https://librewolf.net/</url>
   <url type="bugtracker">https://codeberg.org/librewolf/issues/issues</url>
+  <url type="faq">https://librewolf.net/docs/faq/</url>
+  <url type="vcs-browser">https://codeberg.org/librewolf</url>
   <provides>
     <id>io.gitlab.librewolf-community</id>
   </provides>
