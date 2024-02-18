@@ -99,12 +99,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/core/41/41.0/sources/gtk%2B-3.24.30.tar.xz",
-                    "sha256": "ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
-                },
-                {
-                    "type": "patch",
-                    "path": "gtk3-werror.patch"
+                    "url": "https://download.gnome.org/core/45/45.4/sources/gtk%2B-3.24.41.tar.xz",
+                    "sha256": "47da61487af3087a94bc49296fd025ca0bc02f96ef06c556e7c8988bd651b6fa"
                 }
             ]
         },
