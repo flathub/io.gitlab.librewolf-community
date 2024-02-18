@@ -19,7 +19,6 @@
         "--socket=pcsc",
         "--socket=pulseaudio",
         "--socket=cups",
-        "--env=GTK_PATH=/app/lib/gtkmodules",
         "--persist=.librewolf",
         "--filesystem=xdg-download:rw",
         "--filesystem=xdg-run/pipewire-0",
