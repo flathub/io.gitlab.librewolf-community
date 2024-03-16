@@ -19,7 +19,6 @@
         "--socket=pcsc",
         "--socket=pulseaudio",
         "--socket=cups",
-        "--env=GTK_PATH=/app/lib/gtkmodules",
         "--persist=.librewolf",
         "--filesystem=xdg-download:rw",
         "--filesystem=xdg-run/pipewire-0",
@@ -83,28 +82,6 @@
                 {
                     "type": "file",
                     "path": "librewolf.sh"
-                }
-            ]
-        },
-        {
-            "name": "gtk-cups-backend",
-            "buildsystem": "meson",
-            "make-args": [
-                "modules/printbackends/libprintbackend-cups.so"
-            ],
-            "no-make-install": true,
-            "post-install": [
-                "install -Dm 755 modules/printbackends/libprintbackend-cups.so -t /app/lib/gtkmodules/3.0.0/printbackends/"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/core/41/41.0/sources/gtk%2B-3.24.30.tar.xz",
-                    "sha256": "ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
-                },
-                {
-                    "type": "patch",
-                    "path": "gtk3-werror.patch"
                 }
             ]
         },
