@@ -20,7 +20,7 @@
         "--socket=pulseaudio",
         "--socket=cups",
         "--persist=.librewolf",
-        "--filesystem=xdg-download:rw",
+        "--persist=.mozilla",
         "--filesystem=xdg-run/pipewire-0",
         "--device=dri",
         "--talk-name=org.freedesktop.FileManager1",
