@@ -33,6 +33,7 @@
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
         "--own-name=io.gitlab.librewolf.*",
+        "--own-name=io.gitlab.firefox.*",
         "--own-name=org.mpris.MediaPlayer2.firefox.*"
     ],
     "modules": [
@@ -53,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/127.0.2-2/librewolf-127.0.2-2-linux-arm64-package.tar.bz2",
-                    "sha256": "ac895d15e4dbdeb240d34c2e13363b486f9129763edc8de1ebe41080812774d8",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/128.0-2/librewolf-128.0-2-linux-arm64-package.tar.bz2",
+                    "sha256": "6ff964bbdbf2bf3e8b64c57b25974a36e1f3c01a125cb58618e5f489fa935610",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
@@ -63,8 +64,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/127.0.2-2/librewolf-127.0.2-2-linux-x86_64-package.tar.bz2",
-                    "sha256": "67c17d6cd32b32ec9414904b2866175d896cb692256bc609852c60a25d423ae0",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/128.0-2/librewolf-128.0-2-linux-x86_64-package.tar.bz2",
+                    "sha256": "9ca01f5db1eea545cac93538a164089427010390ec98c5f03f1e3c6d699ef8b4",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
