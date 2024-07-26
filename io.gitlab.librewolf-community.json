@@ -60,7 +60,13 @@
                     "strip-components": 1,
                     "only-arches": [
                         "aarch64"
-                    ]
+                    ],
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-arm64-package.tar.bz2\")).url"
+                    }
                 },
                 {
                     "type": "archive",
@@ -70,7 +76,15 @@
                     "strip-components": 1,
                     "only-arches": [
                         "x86_64"
-                    ]
+                    ],
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-x86_64-package.tar.bz2\")).url",
+                        "is-main-source": true,
+                        "timestamp-query": ".released_at"
+                    }
                 },
                 {
                     "type": "file",
