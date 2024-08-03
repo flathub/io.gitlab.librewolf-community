@@ -31,7 +31,8 @@
     </ul>
   </description>
   <releases>
-    <release version="128.0.3-1" date="2024-07-30"/>
+    <release version="128.0.3-2" date="2024-08-03">
+    </release>
   </releases>
   <keywords>
     <keyword>librewolf</keyword>
