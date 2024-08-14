@@ -7,11 +7,6 @@
   <summary>LibreWolf Web Browser</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
-  <screenshots>
-    <screenshot type="default">
-      <image type="source" width="1121" height="902">https://librewolf.net/screenshot.png</image>
-    </screenshot>
-  </screenshots>
   <description>
     <p>LibreWolf</p>
     <p>This project is an independent fork of Firefox, with the primary goals of privacy security and user freedom. It is the community run successor to LibreFox.</p>
@@ -30,12 +25,14 @@
       <li>And much more…</li>
     </ul>
   </description>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1121" height="902">https://librewolf.net/screenshot.png</image>
+    </screenshot>
+  </screenshots>
   <releases>
-    <release version="129.0.1-1" date="2024-08-14">
-      <description></description>
-    </release>
-    <release version="129.0-1" date="2024-08-13">
-    </release>
+    <release version="129.0.1-1" date="2024-08-14"/>
+    <release version="129.0-1" date="2024-08-13"/>
   </releases>
   <keywords>
     <keyword>librewolf</keyword>
