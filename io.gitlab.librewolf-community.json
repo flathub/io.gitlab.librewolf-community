@@ -54,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/130.0-1/librewolf-130.0-1-linux-arm64-package.tar.bz2",
-                    "sha256": "95dd93ec004108d01be05801838bf4f6503dbc66e429b8f26091942ed5872aca",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/130.0-2/librewolf-130.0-2-linux-arm64-package.tar.bz2",
+                    "sha256": "694d7deaf4a2b2df853800618113d2c0a607c80ee04a1aae614debf2e458ddeb",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
@@ -70,8 +70,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/130.0-1/librewolf-130.0-1-linux-x86_64-package.tar.bz2",
-                    "sha256": "a248b92176e04b623a2ce229375f2e75d298a66c84ea7693d2e5253d2376bdf0",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/130.0-2/librewolf-130.0-2-linux-x86_64-package.tar.bz2",
+                    "sha256": "cb3a6edcc6951e8912262ddd56822f30321af00d3e38b962b0a73875ae3ba32a",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
