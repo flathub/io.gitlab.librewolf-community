@@ -25,6 +25,7 @@
         "--device=dri",
         "--talk-name=org.freedesktop.FileManager1",
         "--system-talk-name=org.freedesktop.NetworkManager",
+        "--system-talk-name=org.freedesktop.UPower",
         "--talk-name=org.a11y.Bus",
         "--talk-name=org.gnome.SessionManager",
         "--talk-name=org.freedesktop.ScreenSaver",
