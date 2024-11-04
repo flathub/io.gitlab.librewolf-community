@@ -1,12 +1,12 @@
 {
     "app-id": "io.gitlab.librewolf-community",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "23.08",
+            "version": "24.08",
             "add-ld-path": "."
         }
     },
@@ -33,6 +33,7 @@
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
         "--own-name=io.gitlab.librewolf.*",
+        "--own-name=io.gitlab.firefox.*",
         "--own-name=org.mpris.MediaPlayer2.firefox.*"
     ],
     "modules": [
@@ -53,23 +54,37 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/126.0-1/librewolf-126.0-1-linux-arm64-package.tar.bz2",
-                    "sha256": "bc86f5a42f1f7a9543740bee3fd9825c977f26d2590fe37b10c04b6d6e06e781",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/132.0-1/librewolf-132.0-1-linux-arm64-package.tar.bz2",
+                    "sha256": "85b97a184ec09a803f4946d74d4628f84d9d23d0b34b7e88eb805390b696cb2c",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
                         "aarch64"
-                    ]
+                    ],
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-arm64-package.tar.bz2\")).url"
+                    }
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/126.0-1/librewolf-126.0-1-linux-x86_64-package.tar.bz2",
-                    "sha256": "adbae74b198c137ac765a1dfb257464f1f251948f08130e0b91d6317f21457c6",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/132.0-1/librewolf-132.0-1-linux-x86_64-package.tar.bz2",
+                    "sha256": "b74f9111b157a026cf02c410bf5e07224a770f5cb4184571fea783f96be3c44b",
                     "dest": "librewolf.tar.bz2",
                     "strip-components": 1,
                     "only-arches": [
                         "x86_64"
-                    ]
+                    ],
+                    "x-checker-data": {
+                        "type": "json",
+                        "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-x86_64-package.tar.bz2\")).url",
+                        "is-main-source": true,
+                        "timestamp-query": ".released_at"
+                    }
                 },
                 {
                     "type": "file",
