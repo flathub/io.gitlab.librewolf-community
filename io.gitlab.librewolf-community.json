@@ -32,6 +32,7 @@
         "--talk-name=org.freedesktop.Notifications",
         "--env=MOZ_ENABLE_WAYLAND=1",
         "--env=MOZ_USE_XINPUT2=1",
+        "--env=MESA_SHADER_CACHE_DIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID/cache/mesa_shader_cache_db",
         "--own-name=io.gitlab.librewolf.*",
         "--own-name=io.gitlab.firefox.*",
         "--own-name=org.mpris.MediaPlayer2.firefox.*"
