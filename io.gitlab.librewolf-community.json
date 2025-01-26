@@ -22,6 +22,7 @@
         "--persist=.librewolf",
         "--filesystem=xdg-download:rw",
         "--filesystem=xdg-run/pipewire-0",
+        "--filesystem=xdg-run/speech-dispatcher:ro",
         "--device=dri",
         "--talk-name=org.freedesktop.FileManager1",
         "--system-talk-name=org.freedesktop.NetworkManager",
@@ -134,6 +135,51 @@
                         "url-template": "https://download.gnome.org/sources/libnotify/$major.$minor/libnotify-$version.tar.xz"
                     }
                 }
+            ]
+        },
+        {
+            "name": "dotconf",
+            "cleanup": ["*"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/williamh/dotconf/archive/refs/tags/v1.3.tar.gz",
+                    "sha256": "7f1ecf40de1ad002a065a321582ed34f8c14242309c3547ad59710ae3c805653"
+                },
+                {
+                    "type": "script",
+                    "commands": ["autoreconf -fiv"],
+                    "dest-filename": "autogen.sh"
+                }
+            ]
+        },
+        {
+            "name": "libspeechd",
+            "config-opts": [
+                    "--disable-python",
+                    "--with-systemdsystemunitdir=''",
+                    "--disable-rpath",
+                    "--disable-static",
+                    "--with-kali=no",
+                    "--with-baratinoo=no",
+                    "--with-ibmtts=no",
+                    "--with-voxin=no",
+                    "--without-oss"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/brailcom/speechd/releases/download/0.11.5/speech-dispatcher-0.11.5.tar.gz",
+                    "sha256": "1ce4759ffabbaf1aeb433a5ec0739be0676e9bdfbae9444a7b3be1b2af3ec12b"
+                }
+            ],
+            "cleanup": [
+                "/bin",
+                "/etc",
+                "/libexec",
+                "/lib/speech-dispatcher",
+                "/share/sounds/speech-dispatcher",
+                "/share/speech-dispatcher"
             ]
         }
     ]
