@@ -1,5 +1,5 @@
 {
-    "app-id": "io.gitlab.librewolf-community",
+    "id": "io.gitlab.librewolf-community",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
