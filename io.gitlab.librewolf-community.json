@@ -8,6 +8,10 @@
             "directory": "lib/ffmpeg",
             "version": "24.08",
             "add-ld-path": "."
+        },
+        "org.mozilla.firefox.systemconfig": {
+            "directory": "etc/firefox",
+            "no-autodownload": true
         }
     },
     "command": "librewolf",
