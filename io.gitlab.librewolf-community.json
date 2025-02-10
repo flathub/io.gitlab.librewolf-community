@@ -44,7 +44,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "mkdir -p /app/lib",
-                "mv librewolf.tar.bz2 /app/lib/librewolf",
+                "mv librewolf.tar.xz /app/lib/librewolf",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/usr/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
                 "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
@@ -55,9 +55,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/134.0.2-1/librewolf-134.0.2-1-linux-arm64-package.tar.bz2",
-                    "sha256": "7e713b9ebe8c4bdf5bb34e7d9ac5d4e3d24c10d3f22fbe87fcef46408d5f7010",
-                    "dest": "librewolf.tar.bz2",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/135.0-1/librewolf-135.0-1-linux-arm64-package.tar.xz",
+                    "sha256": "b0d60bed7112f64485b56b12234a5a0857d6e7963f934c2854ae94ebf22f4e59",
+                    "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
                         "aarch64"
@@ -66,14 +66,14 @@
                         "type": "json",
                         "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
                         "version-query": ".tag_name",
-                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-arm64-package.tar.bz2\")).url"
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-arm64-package.tar.xz\")).url"
                     }
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/134.0.2-1/librewolf-134.0.2-1-linux-x86_64-package.tar.bz2",
-                    "sha256": "a8e1230562d9b250f3aeecce14a31e1d59336e189b4c3642ba9e8619b0d70017",
-                    "dest": "librewolf.tar.bz2",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/135.0-1/librewolf-135.0-1-linux-x86_64-package.tar.xz",
+                    "sha256": "ae07d2e66d679dd1e2fcd2a898c19fe1a18d0ac36a81cbaccffb20985ebddef3",
+                    "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
                         "x86_64"
@@ -82,7 +82,7 @@
                         "type": "json",
                         "url": "https://gitlab.com/api/v4/projects/librewolf-community%2Fbrowser%2Fbsys6/releases/permalink/latest",
                         "version-query": ".tag_name",
-                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-x86_64-package.tar.bz2\")).url",
+                        "url-query": ".assets.links[] | select(.url | endswith(\"-linux-x86_64-package.tar.xz\")).url",
                         "is-main-source": true,
                         "timestamp-query": ".released_at"
                     }
@@ -139,7 +139,9 @@
         },
         {
             "name": "dotconf",
-            "cleanup": ["*"],
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -148,7 +150,9 @@
                 },
                 {
                     "type": "script",
-                    "commands": ["autoreconf -fiv"],
+                    "commands": [
+                        "autoreconf -fiv"
+                    ],
                     "dest-filename": "autogen.sh"
                 }
             ]
@@ -156,15 +160,15 @@
         {
             "name": "libspeechd",
             "config-opts": [
-                    "--disable-python",
-                    "--with-systemdsystemunitdir=''",
-                    "--disable-rpath",
-                    "--disable-static",
-                    "--with-kali=no",
-                    "--with-baratinoo=no",
-                    "--with-ibmtts=no",
-                    "--with-voxin=no",
-                    "--without-oss"
+                "--disable-python",
+                "--with-systemdsystemunitdir=''",
+                "--disable-rpath",
+                "--disable-static",
+                "--with-kali=no",
+                "--with-baratinoo=no",
+                "--with-ibmtts=no",
+                "--with-voxin=no",
+                "--without-oss"
             ],
             "sources": [
                 {
