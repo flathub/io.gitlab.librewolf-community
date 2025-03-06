@@ -27,13 +27,11 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image type="source" width="1121" height="902">https://librewolf.net/screenshot.png</image>
+      <image type="source" width="1121" height="902">https://codeberg.org/librewolf/website/raw/branch/master/public/screenshot.png</image>
     </screenshot>
   </screenshots>
   <releases>
-    <release version="136.0-2" date="2025-03-06">
-      <description></description>
-    </release>
+    <release version="136.0-2" date="2025-03-06"/>
     <release version="135.0.1-1" date="2025-02-20"/>
     <release version="135.0-1" date="2025-02-10"/>
     <release version="134.0.2-1" date="2025-01-25"/>
