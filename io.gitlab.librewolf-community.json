@@ -55,8 +55,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/136.0.2-1/librewolf-136.0.2-1-linux-arm64-package.tar.xz",
-                    "sha256": "5c191c26b482a856f7ae3ea93452c016739311b731c3fdd0314aaaa3ff258b05",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/136.0.4-1/librewolf-136.0.4-1-linux-arm64-package.tar.xz",
+                    "sha256": "f4ec15b8ab13259ee3b3ce3a0594b35e2cb3e7777479b5f0ba05f2ae69c51507",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -71,8 +71,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/136.0.2-1/librewolf-136.0.2-1-linux-x86_64-package.tar.xz",
-                    "sha256": "90605ba8bdd533ae7adc11b76ce44fc68249be9260a05ef8eea4f9d198412c36",
+                    "url": "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/136.0.4-1/librewolf-136.0.4-1-linux-x86_64-package.tar.xz",
+                    "sha256": "df3708d4d0fe95a5c502fee70e55040e3334d3b5c78259cc6321647759feb11f",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -126,9 +126,9 @@
             ],
             "sources": [
                 {
-                    "sha256": "8fa04d4ebdc155b0a239df88bd9f09e8f2739d5707a1390b427ab4985f83d25a",
+                    "sha256": "c5540aaefb60e1d63b1c587c05f2284ebe72ece7d0c0e5e4a778cfd5844b6b58",
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.4.tar.xz",
+                    "url": "https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.6.tar.xz",
                     "x-checker-data": {
                         "project-id": 13149,
                         "type": "anitya",
