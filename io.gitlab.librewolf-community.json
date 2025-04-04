@@ -21,7 +21,6 @@
         "--socket=cups",
         "--persist=.librewolf",
         "--filesystem=xdg-download:rw",
-        "--filesystem=xdg-run/pipewire-0",
         "--filesystem=xdg-run/speech-dispatcher:ro",
         "--device=dri",
         "--talk-name=org.freedesktop.FileManager1",
