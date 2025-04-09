@@ -9,7 +9,7 @@
             "version": "24.08",
             "add-ld-path": "."
         },
-        "org.mozilla.firefox.systemconfig": {
+        "io.gitlab.librewolf.systemconfig": {
             "directory": "etc/firefox",
             "no-autodownload": true
         }
@@ -53,7 +53,8 @@
                 "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
                 "install -D -m644 io.gitlab.librewolf-community.desktop -t /app/share/applications",
                 "install -D -m755 librewolf.sh /app/bin/librewolf",
-                "install -d /app/lib/ffmpeg"
+                "install -d /app/lib/ffmpeg",
+                "mkdir -p /app/etc/firefox"
             ],
             "sources": [
                 {
