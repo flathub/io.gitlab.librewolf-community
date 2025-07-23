@@ -36,6 +36,12 @@
         "--own-name=io.gitlab.firefox.*",
         "--own-name=org.mpris.MediaPlayer2.firefox.*"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/*.la",
+        "/lib/pkgconfig",
+        "/share/man"
+    ],
     "modules": [
         "shared-modules/dbus-glib/dbus-glib.json",
         {
