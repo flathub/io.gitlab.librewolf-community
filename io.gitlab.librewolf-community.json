@@ -11,11 +11,11 @@
         },
         "io.gitlab.librewolf_community.extension": {
             "directory": "extensions",
-	    "subdirectories": true,
-	    "merge-dirs": "lib;bin;share",
+            "subdirectories": true,
+            "merge-dirs": "lib;bin;share",
             "add-ld-path": "lib",
-	    "autodelete": true,
-	    "no-autodownload": true
+            "autodelete": true,
+            "no-autodownload": true
         }
     },
     "command": "librewolf",
@@ -114,8 +114,8 @@
                 }
             ],
             "post-install": [
-		    "mkdir --parents ${FLATPAK_DEST}/extensions"
-	    ]
+                "mkdir --parents ${FLATPAK_DEST}/extensions"
+            ]
         },
         {
             "name": "gtk-settings",
