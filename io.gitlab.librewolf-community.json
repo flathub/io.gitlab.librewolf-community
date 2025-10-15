@@ -8,6 +8,14 @@
             "directory": "lib/ffmpeg",
             "version": "24.08",
             "add-ld-path": "."
+        },
+        "io.gitlab.librewolf_community.extension": {
+            "directory": "extensions",
+            "subdirectories": true,
+            "merge-dirs": "lib;bin;share",
+            "add-ld-path": "lib",
+            "autodelete": true,
+            "no-autodownload": true
         }
     },
     "command": "librewolf",
@@ -104,6 +112,9 @@
                     "type": "file",
                     "path": "librewolf.sh"
                 }
+            ],
+            "post-install": [
+                "mkdir --parents ${FLATPAK_DEST}/extensions"
             ]
         },
         {
