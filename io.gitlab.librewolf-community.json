@@ -33,6 +33,7 @@
         "--talk-name=org.a11y.Bus",
         "--talk-name=org.gtk.vfs.*",
         "--env=MOZ_USE_XINPUT2=1",
+        "--env=DICPATH=/usr/share/hunspell",
         "--own-name=io.gitlab.librewolf.*",
         "--own-name=io.gitlab.firefox.*",
         "--own-name=org.mpris.MediaPlayer2.firefox.*"
