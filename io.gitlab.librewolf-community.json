@@ -103,19 +103,6 @@
             "post-install": [
                 "mkdir --parents ${FLATPAK_DEST}/extensions"
             ]
-        },
-        {
-            "name": "gtk-settings",
-            "buildsystem": "simple",
-            "build-commands": [
-                "install -Dm 644 gtk-settings.ini /app/etc/xdg/gtk-3.0/settings.ini"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "gtk-settings.ini"
-                }
-            ]
         }
     ]
 }
