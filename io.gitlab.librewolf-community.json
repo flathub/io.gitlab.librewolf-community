@@ -46,7 +46,6 @@
                 "mkdir -p /app/lib",
                 "mv librewolf.tar.xz /app/lib/librewolf",
                 "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
-                "install -D -m644 /app/lib/librewolf/browser/chrome/icons/default/default128.png /app/usr/share/icons/hicolor/128x128/apps/io.gitlab.librewolf-community.png",
                 "install -D -m644 io.gitlab.librewolf-community.appdata.xml -t /app/share/metainfo",
                 "install -D -m644 io.gitlab.librewolf-community.desktop -t /app/share/applications",
                 "install -D -m755 librewolf.sh /app/bin/librewolf"
@@ -95,8 +94,12 @@
                     "path": "io.gitlab.librewolf-community.appdata.xml"
                 },
                 {
-                    "type": "file",
-                    "path": "librewolf.sh"
+                    "type": "script",
+                    "dest-filename": "librewolf.sh",
+                    "commands": [
+                        "export TMPDIR=\"$XDG_CACHE_HOME/tmp\"",
+                        "exec /app/lib/librewolf/librewolf \"$@\""
+                    ]
                 }
             ],
             "post-install": [
