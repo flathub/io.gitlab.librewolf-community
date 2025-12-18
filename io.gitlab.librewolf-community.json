@@ -27,7 +27,7 @@
         "--persist=.librewolf",
         "--filesystem=xdg-download:rw",
         "--filesystem=xdg-run/speech-dispatcher:ro",
-        "--device=dri",
+        "--device=all",
         "--talk-name=org.freedesktop.FileManager1",
         "--system-talk-name=org.freedesktop.NetworkManager",
         "--talk-name=org.a11y.Bus",
