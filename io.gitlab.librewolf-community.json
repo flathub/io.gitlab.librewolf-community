@@ -53,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.2-1/librewolf-147.0.2-1-linux-arm64-package.tar.xz",
-                    "sha256": "c73f40a60a46f1bec48088ba9fc2fd9506cb9a8f21c6d1ad7e92e9a58bd13359",
+                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.3-1/librewolf-147.0.3-1-linux-arm64-package.tar.xz",
+                    "sha256": "4a8284278121cb3dd079390552b5d9eac31c3439e7ae894cd02ea86069060b4f",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
