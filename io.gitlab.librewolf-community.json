@@ -53,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.2-1/librewolf-147.0.2-1-linux-arm64-package.tar.xz",
-                    "sha256": "c73f40a60a46f1bec48088ba9fc2fd9506cb9a8f21c6d1ad7e92e9a58bd13359",
+                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.3-1/librewolf-147.0.3-1-linux-arm64-package.tar.xz",
+                    "sha256": "4a8284278121cb3dd079390552b5d9eac31c3439e7ae894cd02ea86069060b4f",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -69,8 +69,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.2-1/librewolf-147.0.2-1-linux-x86_64-package.tar.xz",
-                    "sha256": "e5678b61a66e8b15c416bccc5db17b1a45654a9b42d0d83a424082f1e7084971",
+                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.3-1/librewolf-147.0.3-1-linux-x86_64-package.tar.xz",
+                    "sha256": "a6ccdc0c7633aff8efa758c8a9476676447d23e4d76a43cf968ec67a6c122ee9",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -78,7 +78,7 @@
                     ],
                     "x-checker-data": {
                         "type": "json",
-                        "url": "https://codeberg.org/api/v1/repos/librewolf/bsys6/releases/latestu",
+                        "url": "https://codeberg.org/api/v1/repos/librewolf/bsys6/releases/latest",
                         "version-query": ".tag_name",
                         "url-query": ".assets[] | select(.browser_download_url | endswith(\"-linux-x86_64-package.tar.xz\")).browser_download_url",
                         "is-main-source": true,
