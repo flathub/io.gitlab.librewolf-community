@@ -69,8 +69,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.3-1/librewolf-147.0.3-1-linux-x86_64-package.tar.xz",
-                    "sha256": "a6ccdc0c7633aff8efa758c8a9476676447d23e4d76a43cf968ec67a6c122ee9",
+                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/147.0.3-2/librewolf-147.0.3-2-linux-x86_64-package.tar.xz",
+                    "sha256": "041ad95256c0e7af6692d8c331ac91e0d6f4e629616ec00d299eb26368d9677e",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -82,7 +82,7 @@
                         "version-query": ".tag_name",
                         "url-query": ".assets[] | select(.browser_download_url | endswith(\"-linux-x86_64-package.tar.xz\")).browser_download_url",
                         "is-main-source": true,
-                        "timestamp-query": ".released_at"
+                        "timestamp-query": ".published_at"
                     }
                 },
                 {
