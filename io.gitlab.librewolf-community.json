@@ -25,6 +25,7 @@
         "--socket=pulseaudio",
         "--socket=cups",
         "--persist=.librewolf",
+        "--filesystem=xdg-config/librewolf/librewolf:create",
         "--filesystem=xdg-download:rw",
         "--filesystem=xdg-run/speech-dispatcher:ro",
         "--device=dri",
