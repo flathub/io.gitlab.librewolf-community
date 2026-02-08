@@ -14,7 +14,7 @@
     <p>LibreWolf is NOT associated with Mozilla or its products.</p>
     <p>Features:</p>
     <ul>
-      <li>Latest Version of Firefox: LibreWolf is compiled directly from the latest build of Firefox Stable. You will have the the latest features, and security updates.</li>
+      <li>Latest Version of Firefox: LibreWolf is compiled directly from the latest build of Firefox Stable. You will have the latest features, and security updates.</li>
       <li>Completely Independent Build: LibreWolf uses a completely independent build from Firefox and has its own settings, profile folder and installation path. As a result, it can be installed alongside Firefox or any other browser.</li>
       <li>Settings protection: important settings are enforced/locked within librewolf.cfg and policies.json, those settings cannot be changed by addons/updates/LibreWolf itself or unwanted/accidental manipulation; To change those settings you can easily do it by editing librewolf.cfg and policies.json.</li>
       <li>LibreWolf-addons: set of optional LibreWolf extensions</li>
