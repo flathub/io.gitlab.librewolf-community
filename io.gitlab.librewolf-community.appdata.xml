@@ -31,6 +31,9 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="148.0.2-2" date="2026-03-11">
+      <description></description>
+    </release>
     <release version="148.0-1" date="2026-02-24"/>
     <release version="147.0.4-1" date="2026-02-16"/>
     <release version="147.0.3-2" date="2026-02-05"/>
