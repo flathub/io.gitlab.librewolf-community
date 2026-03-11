@@ -53,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/148.0-1/librewolf-148.0-1-linux-arm64-package.tar.xz",
-                    "sha256": "11914d72c842771df18dedff4565c95587f7205c5e3576d94a85a3a108686bb2",
+                    "url": "https://dl.librewolf.net/librewolf/148.0.2-2/librewolf-148.0.2-2-linux-arm64-package.tar.xz",
+                    "sha256": "c29df50592d4807fa95e46839e552d5cc36e69c5848106e7931318b76be12996",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -69,8 +69,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://codeberg.org/api/packages/librewolf/generic/librewolf/148.0-1/librewolf-148.0-1-linux-x86_64-package.tar.xz",
-                    "sha256": "515f6568a980bf269f3575dc086ac4af9d5d9723b50da577887272f7cd4e47d3",
+                    "url": "https://dl.librewolf.net/librewolf/148.0.2-2/librewolf-148.0.2-2-linux-x86_64-package.tar.xz",
+                    "sha256": "e058a0008be4b1bc09e3a5ea1f6db9c282be8a7407527bf2c6f4013ffcb26a05",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
