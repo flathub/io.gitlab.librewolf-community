@@ -53,8 +53,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://dl.librewolf.net/librewolf/152.0.2-1/librewolf-152.0.2-1-linux-arm64-package.tar.xz",
-                    "sha256": "c64de8e453839b981ed88f09ce0c174e982efd223a55c44e209ef4d397b0d8f6",
+                    "url": "https://dl.librewolf.net/librewolf/152.0.4-1/librewolf-152.0.4-1-linux-arm64-package.tar.xz",
+                    "sha256": "435bd3ffda8eb36022311b0b7287c5ec5d98fb9409265a08fd049567003d802f",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
@@ -69,8 +69,8 @@
                 },
                 {
                     "type": "archive",
-                    "url": "https://dl.librewolf.net/librewolf/152.0.2-1/librewolf-152.0.2-1-linux-x86_64-package.tar.xz",
-                    "sha256": "4ead9b8fbe68657487d981d74a18d146ce00ab1a3ce81bb038d5eef88b1d0ae0",
+                    "url": "https://dl.librewolf.net/librewolf/152.0.4-1/librewolf-152.0.4-1-linux-x86_64-package.tar.xz",
+                    "sha256": "e2f9acbfddc436db5e135f2e18917664485a440de718983ffd66187414442228",
                     "dest": "librewolf.tar.xz",
                     "strip-components": 1,
                     "only-arches": [
