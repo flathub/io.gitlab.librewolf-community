@@ -167,8 +167,8 @@
     <keyword>web</keyword>
   </keywords>
   <url type="homepage">https://librewolf.net/</url>
-  <url type="bugtracker">https://codeberg.org/librewolf/issues/issues</url>
+  <url type="bugtracker">https://librewolf.dev/librewolf/issues/issues</url>
   <url type="faq">https://librewolf.net/docs/faq/</url>
-  <url type="vcs-browser">https://codeberg.org/librewolf</url>
+  <url type="vcs-browser">https://librewolf.dev/librewolf/</url>
   <content_rating type="oars-1.1"/>
 </component>
