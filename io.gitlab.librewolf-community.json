@@ -62,7 +62,7 @@
                     ],
                     "x-checker-data": {
                         "type": "json",
-                        "url": "https://codeberg.org/api/v1/repos/librewolf/bsys6/releases/latest",
+                        "url": "https://librewolf.dev/api/v1/repos/librewolf/bsys6/releases/latest",
                         "version-query": ".tag_name",
                         "url-query": ".assets[] | select(.browser_download_url | endswith(\"-linux-arm64-package.tar.xz\")).browser_download_url"
                     }
@@ -78,7 +78,7 @@
                     ],
                     "x-checker-data": {
                         "type": "json",
-                        "url": "https://codeberg.org/api/v1/repos/librewolf/bsys6/releases/latest",
+                        "url": "https://librewolf.dev/api/v1/repos/librewolf/bsys6/releases/latest",
                         "version-query": ".tag_name",
                         "url-query": ".assets[] | select(.browser_download_url | endswith(\"-linux-x86_64-package.tar.xz\")).browser_download_url",
                         "is-main-source": true,
